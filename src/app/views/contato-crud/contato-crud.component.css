@@ -1,0 +1,90 @@
+/* Fundo principal da página de contato */
+main {
+    background: linear-gradient(135deg, #0b0c10, #0f1624);
+    min-height: 75vh;
+    padding: 40px 20px;
+}
+
+/* Cartão contendo os elementos */
+mat-card {
+    background: linear-gradient(145deg, #121424, #1c1e35);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Botão "novo Contato" */
+button {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(to right, #00ffff, #7f00ff);
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #00ffffaa;
+}
+
+button:hover {
+    background: linear-gradient(to right, #00ffff, #ff00cc);
+    box-shadow: 0 0 20px #00ffff;
+}
+
+button:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 10px #ff00cc88;
+}
+
+/* Campo de pesquisa de contato */
+.pesquisa {
+    margin: 10px;
+    padding: 10px 15px;
+    width: 280px;
+    border: 2px solid #7f00ff;
+    border-radius: 8px;
+    background-color: #0f1624;
+    color: #e0e0e0;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.pesquisa::placeholder {
+    color: #888;
+}
+
+.pesquisa:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 12px #00ffff88;
+}
+
+/* Tabela de contatos (thead) */
+table thead {
+    background-color: #121424;
+    color: #00ffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+table thead th {
+    padding: 10px 15px;
+}
+
+/* Tabela geral */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #0d0d1a;
+    color: #e0e0e0;
+}
+
+/* Linhas de zebra */
+table tbody tr:nth-child(even) {
+    background-color: #111827;
+}

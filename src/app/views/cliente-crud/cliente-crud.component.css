@@ -1,0 +1,64 @@
+/* Fundo da página */
+main {
+    background: linear-gradient(135deg, #0b0c10 0%, #0f1624 100%);
+    min-height: 75vh;
+    padding: 40px 20px;
+}
+
+/* mat-card com sombra neon */
+mat-card {
+    background: linear-gradient(145deg, #121424, #1c1e35);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Botão principal estilizado */
+button {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(to right, #00ffff, #7f00ff);
+    color: #0b0c10;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #00ffffaa;
+}
+
+button:hover {
+    background: linear-gradient(to right, #00ffff, #ff00cc);
+    box-shadow: 0 0 20px #00ffff;
+}
+
+button:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 10px #ff05ff88;
+}
+
+/* Campo de pesquisa */
+.pesquisa {
+    margin: 10px;
+    padding: 10px 15px;
+    width: 280px;
+    border: 2px solid #7f00ff;
+    border-radius: 8px;
+    background-color: #0f1624;
+    color: #e0e0e0;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.pesquisa::placeholder {
+    color: #888;
+}
+
+.pesquisa:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 12px #00ffff88;
+}

@@ -1,0 +1,36 @@
+<!-- Barra de navegação completa -->
+<mat-toolbar color="primary" class="header">
+  <!-- Logo + Início -->
+  <span class="left-section">
+    <a routerLink="/">
+      <img class="logo" src="assets/img/loja-gamer.png" alt="logo">
+    </a>
+    <a mat-button routerLink="/">
+      <i class="material-icons">home</i> Início
+    </a>
+  </span>
+
+  <!-- Links do menu (lado direito) -->
+  <span class="right-section">
+    <a mat-button routerLink="/products">
+      <i class="material-icons">storefront</i> Produtos
+    </a>
+    <a mat-button routerLink="/clientes">
+      <i class="material-icons">person</i> Cliente
+    </a>
+    <a mat-button routerLink="/fornecedor">
+      <i class="material-icons">business</i> Fornecedor
+    </a>
+    <a mat-button routerLink="/contato">
+      <i class="material-icons">contacts</i> Contato
+    </a>
+    <a mat-button routerLink="/formaPagamento">
+      <i class="material-icons">payments</i> Pagamentos
+    </a>
+  </span>
+</mat-toolbar>
+
+<!-- Conteúdo principal -->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
