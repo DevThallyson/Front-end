@@ -42,12 +42,13 @@ import { FormaPagamentoUpdateComponent } from './component/formaPagamento/forma-
 import { FormaPagamentoDeleteComponent } from './component/formaPagamento/forma-pagamento-delete/forma-pagamento-delete.component';
 import { ContatoUpdateComponent } from './component/contato/contato-update/contato-update.component';
 import { ContatoDeleteComponent } from './component/contato/contato-delete/contato-delete.component';
-import { MatSelectModule } from '@angular/material/select'; // Adicionado
-import { MatDatepickerModule } from '@angular/material/datepicker'; // Adicionado
-import { MatNativeDateModule } from '@angular/material/core'; // Adicionado
+import { MatSelectModule } from '@angular/material/select'; 
+import { MatDatepickerModule } from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core'; 
 import { MatIconModule } from '@angular/material/icon';
 import { GraficoVendasComponent } from './component/grafico-vendas/grafico-vendas.component';
 import { NgChartsModule } from 'ng2-charts';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -97,12 +98,12 @@ import { NgChartsModule } from 'ng2-charts';
     FormsModule,
     HttpClientModule,
     MatTableModule,
-    MatSelectModule,               // Adicionado
-    MatDatepickerModule,           // Adicionado
-    MatNativeDateModule,           // Adicionado
-    FormsModule, // Adicione aqui
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatIconModule,
-    NgChartsModule, // Importando o módulo de gráficos
+    NgChartsModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

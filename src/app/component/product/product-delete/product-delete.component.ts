@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./product-delete.component.css']
 })
 export class ProductDeleteComponent {
-  product!: Product;
+  product!: Product; // Declaração da variável product
 
   constructor(
     private productService: ProductService,
@@ -17,20 +17,20 @@ export class ProductDeleteComponent {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const proId = this.route.snapshot.paramMap.get('proId');
-    this.productService.readById(proId!).subscribe(product =>{
-      this.product = product
-    })
+    const proId = this.route.snapshot.paramMap.get('proId'); // Obtém o ID do produto da rota
+    this.productService.readById(proId!).subscribe(product => {
+      this.product = product; // Atribui o produto recebido à variável product
+    });
   }
 
   deleteProduct(): void {
-    this.productService.delete(this.product.proId!).subscribe(() =>{
-    this.productService.showMessage('Produto excluido com sucesso!')  
-    this.router.navigate(['/products'])
-    })
+    this.productService.delete(this.product.proId!).subscribe(() => {
+      this.productService.showMessage('Produto excluído com sucesso!');  
+      this.router.navigate(['/products']); // Redireciona para a lista de produtos
+    });
   }
 
-  cancel(): void{
-    this.router.navigate(['/products'])
+  cancel(): void {
+    this.router.navigate(['/products']); // Redireciona para a lista de produtos
   }
 }

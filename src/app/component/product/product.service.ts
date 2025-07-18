@@ -5,34 +5,37 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root' // Define o serviço como singleton no root module
+  providedIn: 'root' // Serviço singleton, disponível em toda a aplicação
 })
 export class ProductService {
 
-  baseUrl = "http://localhost:8080/produtos"; // URL base da API
+  private baseUrl = 'http://localhost:8080/produtos'; // URL base da API
 
-  constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private http: HttpClient
+  ) {}
 
-  // Exibe uma mensagem de notificação
+  // Exibe uma mensagem ao usuário
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
-      duration: 3000, // Duração da mensagem em milissegundos
-      horizontalPosition: "right", // Posição horizontal
-      verticalPosition: "top" // Posição vertical
+      duration: 3000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top'
     });
   }
 
-  // Cria um novo produto
+  // Cria um novo produto no banco de dados
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product);
   }
 
-  // Obtém a lista de produtos
+  // Retorna todos os produtos
   read(): Observable<Product[]> {
     return this.http.get<Product[]>(this.baseUrl);
   }
 
-  // Obtém um produto pelo ID
+  // Busca um produto por ID
   readById(id: string): Observable<Product> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Product>(url);
@@ -50,21 +53,20 @@ export class ProductService {
     return this.http.delete<Product>(url);
   }
 
-//Contador Produto
-private _productCount = 0;
+  // Retorna o número total de produtos (armazenado localmente)
+  private _productCount = 0;
 
-setProductCount(count: number) {
-this._productCount = count;
-}
+  setProductCount(count: number): void {
+    this._productCount = count;
+  }
 
-getProductCount(): number {
-return this._productCount;
-}
+  getProductCount(): number {
+    return this._productCount;
+  }
 
-
-
-//ação para verificar o estoque
-getEstoqueBaixo() {
-  return this.http.get<number>('http://localhost:8080/produtos/estoque-baixo');
-}
+  // Retorna a quantidade de produtos com estoque baixo
+  getEstoqueBaixo(): Observable<number> {
+    const url = `${this.baseUrl}/estoque-baixo`;
+    return this.http.get<number>(url);
+  }
 }
